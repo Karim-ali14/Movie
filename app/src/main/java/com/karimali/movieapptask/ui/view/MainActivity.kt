@@ -1,4 +1,4 @@
-package com.karimali.movieapptask.ui
+package com.karimali.movieapptask.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
