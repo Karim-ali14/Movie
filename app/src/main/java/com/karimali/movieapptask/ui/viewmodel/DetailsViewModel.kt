@@ -30,6 +30,7 @@ class DetailsViewModel @Inject constructor(
     private val _moveDetails: MutableStateFlow<Resource<MoveDetailsModel?>> = MutableStateFlow(Resource.loading())
     val moveDetails: MutableStateFlow<Resource<MoveDetailsModel?>> get() = _moveDetails
 
+
     fun fetchMoveDetails(moveId:Int) {
         performNetworkOp(
             networkCall =  {

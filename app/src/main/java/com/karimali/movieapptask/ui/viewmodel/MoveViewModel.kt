@@ -40,10 +40,12 @@ class MoveViewModel @Inject constructor(
             },
             doOnMainThread = {
                 _isLoading.emit(false)
+                _hasError.emit(false)
                 if (!it?.results.isNullOrEmpty()){
                     _hasData.emit(it?.results?.isNotEmpty() ?: false)
                     _move.emit(Resource.success(it?.results))
                 }else{
+                    _hasData.emit(false)
                     _move.emit(Resource.error(it?.status_message ?: "")) // Todo set static error massage
                 }
             },onError = {

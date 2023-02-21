@@ -12,6 +12,6 @@ class DetailsRepositoryImp @Inject constructor(private val service: ApiService):
     override suspend fun fetchMoveDetails(movieId: Int): MoveDetailsModel? =
         service.fetchMoveDetails(
             apiKey = Constants.Keys.API_KEY,
-            movieId = movieId
+            movieId = movieId.toString()
         )
 }
