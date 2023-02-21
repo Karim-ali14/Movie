@@ -23,7 +23,7 @@
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:id="@+id/player_image"
-                bind:glideImageUrl="@{move.poster_path}"
+                bind:glideImageUrl="@{move.imagePath}"
                 android:scaleType="centerCrop"
                 bind:layout_constraintStart_toStartOf="parent"
                 bind:layout_constraintEnd_toEndOf="parent"

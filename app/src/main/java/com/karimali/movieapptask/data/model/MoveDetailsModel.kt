@@ -1,5 +1,7 @@
 package com.karimali.movieapptask.data.model
 
+import com.karimali.movieapptask.commin.utils.Constants.Links.IMAGE_URL
+
 data class MoveDetailsModel(
     val adult: Boolean?= null,
     val backdrop_path: String?= null,
@@ -26,7 +28,9 @@ data class MoveDetailsModel(
     val video: Boolean?= null,
     val vote_average: Double?= null,
     val vote_count: Int?= null
-)
+) {
+    fun getImagePath() = "$IMAGE_URL$poster_path"
+}
 
 data class Genre(
     val id: Int?= null,

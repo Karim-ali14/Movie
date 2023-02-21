@@ -17,7 +17,7 @@ interface ApiService {
         @Query("api_key") apiKey:String
     ) :ResponseModel<ArrayList<MoveModel>?>?
 
-    @GET(GET_MOVE_DETAIlS) // this hardcoded because GET method take value in compile time
+    @GET(GET_MOVE_DETAIlS)
     suspend fun fetchMoveDetails(
         @Path("movie_id") movieId:String,
         @Query("api_key") apiKey:String

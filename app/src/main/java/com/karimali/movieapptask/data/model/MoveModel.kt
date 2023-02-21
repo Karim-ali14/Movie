@@ -1,5 +1,7 @@
 package com.karimali.movieapptask.data.model
 
+import com.karimali.movieapptask.commin.utils.Constants
+
 typealias Moves = ArrayList<MoveModel>
 
 data class MoveModel(
@@ -17,4 +19,6 @@ data class MoveModel(
     val video: Boolean? = null,
     val vote_average: Double? = null,
     val vote_count: Int? = null
-)
+){
+    fun getImagePath() = "${Constants.Links.IMAGE_URL}$poster_path"
+}
