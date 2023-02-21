@@ -26,7 +26,7 @@ class MoveViewModel @Inject constructor(
     private val _move: MutableStateFlow<Resource<Moves?>> = MutableStateFlow(Resource.loading())
     val move: MutableStateFlow<Resource<Moves?>> get() = _move
 
-    suspend fun invoke() {
+    suspend fun fetchMoves() {
         performNetworkOp(
             networkCall =  {
                 _isLoading.emit(true)
