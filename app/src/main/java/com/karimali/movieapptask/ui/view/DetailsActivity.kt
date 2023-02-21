@@ -4,17 +4,21 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.karimali.movieapptask.commin.binder.viewBinding
 import com.karimali.movieapptask.commin.extension.showBackButton
 import com.karimali.movieapptask.commin.utils.Constants
 import com.karimali.movieapptask.databinding.ActivityDetailsBinding
 import com.karimali.movieapptask.databinding.ActivityMoveBinding
+import com.karimali.movieapptask.ui.viewmodel.DetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
 
     private val binding by viewBinding(ActivityDetailsBinding::inflate)
+
+    private val detailsViewModel:DetailsViewModel by viewModels()
 
     companion object {
         fun getInstance(context:Context,moveId:Int) = Intent(context,DetailsActivity::class.java).apply {
