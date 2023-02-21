@@ -3,19 +3,18 @@ package com.karimali.movieapptask.ui.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.karimali.movieapptask.R
 import com.karimali.movieapptask.commin.binder.viewBinding
-import com.karimali.movieapptask.databinding.ActivityMainBinding
+import com.karimali.movieapptask.databinding.ActivityMoveBinding
 import com.karimali.movieapptask.ui.adapter.MoveAdapter
 import com.karimali.movieapptask.ui.viewmodel.MoveViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MoveActivity : AppCompatActivity() {
 
     private val moveViewModel : MoveViewModel by viewModels()
 
-    private val binding by viewBinding(ActivityMainBinding::inflate)
+    private val binding by viewBinding(ActivityMoveBinding::inflate)
 
     private lateinit var moveAdapter: MoveAdapter
 

@@ -12,9 +12,4 @@ class MoveRepositoryImp @Inject constructor(private val service: ApiService): Mo
     override suspend fun fetchAllMoves(): ResponseModel<ArrayList<MoveModel>?>? =
         service.fetchAllMoves(apiKey = Constants.Keys.API_KEY)
 
-    override suspend fun fetchMoveDetails(movieId: Int): MoveDetailsModel? =
-        service.fetchMoveDetails(
-            apiKey = Constants.Keys.API_KEY,
-            movieId = movieId
-        )
 }
