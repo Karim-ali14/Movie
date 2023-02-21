@@ -14,7 +14,7 @@ import javax.annotation.Nullable
 object ReposModule {
 
     @Provides
-    fun provideMoveRepository(@Nullable service: ApiService) : MoveRepository {
+    fun provideMoveRepository(service: ApiService) : MoveRepository {
         return MoveRepositoryImp(service)
     }
 }

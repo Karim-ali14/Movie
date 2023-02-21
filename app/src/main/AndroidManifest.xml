@@ -17,8 +17,9 @@
         android:theme="@style/Theme.MovieAppTask"
         tools:targetApi="31">
         <activity
-            android:name=".DetailsActivity"
-            android:exported="false">
+            android:name=".ui.view.DetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.view.MoveActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

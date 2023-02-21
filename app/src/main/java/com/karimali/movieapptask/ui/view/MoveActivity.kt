@@ -2,8 +2,10 @@ package com.karimali.movieapptask.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import com.karimali.movieapptask.commin.binder.viewBinding
+import com.karimali.movieapptask.data.model.MoveModel
 import com.karimali.movieapptask.databinding.ActivityMoveBinding
 import com.karimali.movieapptask.ui.adapter.MoveAdapter
 import com.karimali.movieapptask.ui.viewmodel.MoveViewModel
@@ -28,7 +30,15 @@ class MoveActivity : AppCompatActivity() {
 
     private fun initAdapter() {
         moveAdapter = MoveAdapter(
-            arrayListOf()
+            arrayListOf(),
+            object : MoveAdapter.EventClicks {
+                override fun onItemClick(model: MoveModel) {
+                    startActivity(DetailsActivity.getInstance(
+                        this@MoveActivity,
+                        model.id ?: 0
+                    ))
+                }
+            }
         )
     }
 

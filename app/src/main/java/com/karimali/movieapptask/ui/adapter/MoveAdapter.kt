@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.karimali.movieapptask.data.model.MoveModel
 import com.karimali.movieapptask.databinding.MoveItemLayoutBinding
 
-class MoveAdapter(private val playerList:ArrayList<MoveModel>):RecyclerView.Adapter<MoveAdapter.MoveViewHolder>(){
+class MoveAdapter(
+    private val playerList:ArrayList<MoveModel>,
+    private val eventClicks:EventClicks
+    ):RecyclerView.Adapter<MoveAdapter.MoveViewHolder>(){
 
     class MoveViewHolder(val binding:MoveItemLayoutBinding):RecyclerView.ViewHolder(binding.root)
 
@@ -21,7 +24,11 @@ class MoveAdapter(private val playerList:ArrayList<MoveModel>):RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: MoveViewHolder, position: Int) {
-        holder.binding.move = playerList[position]
+        val moveItem = playerList[position]
+        holder.binding.move = moveItem
+        holder.itemView.setOnClickListener {
+            eventClicks.onItemClick(moveItem)
+        }
     }
 
     override fun getItemCount(): Int = playerList.size
@@ -30,5 +37,9 @@ class MoveAdapter(private val playerList:ArrayList<MoveModel>):RecyclerView.Adap
         playerList.clear()
         playerList.addAll(list)
         notifyDataSetChanged()
+    }
+
+    interface EventClicks{
+        fun onItemClick(model: MoveModel)
     }
 }

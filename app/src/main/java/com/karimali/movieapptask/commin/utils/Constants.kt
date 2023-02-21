@@ -8,6 +8,7 @@ object Constants {
 
     object Keys {
         const val API_KEY = "ca3e24e94fc48634f7f57bf82fd9be5d"
+        const val MOVE_ID_KEY = "moveId"
     }
 
     object Routs {

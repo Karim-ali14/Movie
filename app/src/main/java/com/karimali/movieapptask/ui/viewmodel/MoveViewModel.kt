@@ -6,10 +6,12 @@ import com.karimali.movieapptask.commin.extension.performNetworkOp
 import com.karimali.movieapptask.commin.utils.Resource
 import com.karimali.movieapptask.data.model.Moves
 import com.karimali.movieapptask.data.repository.moveRepo.MoveRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
+@HiltViewModel
 class MoveViewModel @Inject constructor(
     private val moveRepository: MoveRepository
 ) : ViewModel() {
@@ -26,7 +28,11 @@ class MoveViewModel @Inject constructor(
     private val _move: MutableStateFlow<Resource<Moves?>> = MutableStateFlow(Resource.loading())
     val move: MutableStateFlow<Resource<Moves?>> get() = _move
 
-    suspend fun fetchMoves() {
+    init {
+        fetchMoves()
+    }
+
+    fun fetchMoves() {
         performNetworkOp(
             networkCall =  {
                 _isLoading.emit(true)
