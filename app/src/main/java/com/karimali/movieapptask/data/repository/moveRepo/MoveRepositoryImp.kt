@@ -1,14 +1,13 @@
-package com.karimali.movieapptask.data.repository
+package com.karimali.movieapptask.data.repository.moveRepo
 
 import com.karimali.movieapptask.commin.utils.Constants
-import javax.annotation.Nullable
 import com.karimali.movieapptask.data.api.ApiService
 import com.karimali.movieapptask.data.model.MoveDetailsModel
 import com.karimali.movieapptask.data.model.MoveModel
 import com.karimali.movieapptask.data.model.ResponseModel
 import javax.inject.Inject
 
-class MainRepositoryImp @Inject constructor(private val service: ApiService): MainRepository {
+class MoveRepositoryImp @Inject constructor(private val service: ApiService): MoveRepository {
 
     override suspend fun fetchAllMoves(): ResponseModel<ArrayList<MoveModel>?>? =
         service.fetchAllMoves(apiKey = Constants.Keys.API_KEY)

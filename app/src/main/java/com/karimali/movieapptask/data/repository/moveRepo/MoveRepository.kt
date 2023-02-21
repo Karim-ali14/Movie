@@ -1,10 +1,10 @@
-package com.karimali.movieapptask.data.repository
+package com.karimali.movieapptask.data.repository.moveRepo
 
 import com.karimali.movieapptask.data.model.MoveDetailsModel
 import com.karimali.movieapptask.data.model.MoveModel
 import com.karimali.movieapptask.data.model.ResponseModel
 
-interface MainRepository {
+interface MoveRepository {
 
     suspend fun fetchAllMoves() : ResponseModel<ArrayList<MoveModel>?>? = null
 

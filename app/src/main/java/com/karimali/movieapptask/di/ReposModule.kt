@@ -1,8 +1,8 @@
 package com.karimali.movieapptask.di
 
 import com.karimali.movieapptask.data.api.ApiService
-import com.karimali.movieapptask.data.repository.MainRepository
-import com.karimali.movieapptask.data.repository.MainRepositoryImp
+import com.karimali.movieapptask.data.repository.moveRepo.MoveRepository
+import com.karimali.movieapptask.data.repository.moveRepo.MoveRepositoryImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +14,7 @@ import javax.annotation.Nullable
 object ReposModule {
 
     @Provides
-    fun provideMainRepository(@Nullable service: ApiService) : MainRepository {
-        return MainRepositoryImp(service)
+    fun provideMoveRepository(@Nullable service: ApiService) : MoveRepository {
+        return MoveRepositoryImp(service)
     }
 }

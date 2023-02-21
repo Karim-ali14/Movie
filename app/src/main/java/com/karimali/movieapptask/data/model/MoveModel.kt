@@ -1,5 +1,7 @@
 package com.karimali.movieapptask.data.model
 
+typealias Moves = ArrayList<MoveModel>
+
 data class MoveModel(
     val adult: Boolean? = null,
     val backdrop_path: String? = null,
