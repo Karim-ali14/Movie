@@ -1,11 +1,14 @@
 package com.karimali.movieapptask.ui.view
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.karimali.movieapptask.commin.binder.viewBinding
+import com.karimali.movieapptask.commin.utils.Constants
 import com.karimali.movieapptask.data.model.MoveModel
 import com.karimali.movieapptask.databinding.ActivityMoveBinding
 import com.karimali.movieapptask.ui.adapter.MoveAdapter
@@ -22,6 +25,11 @@ class MoveActivity : AppCompatActivity() {
     private val binding by viewBinding(ActivityMoveBinding::inflate)
 
     private lateinit var moveAdapter: MoveAdapter
+
+
+    companion object {
+        fun getInstance(context: Context) = Intent(context,MoveActivity::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
