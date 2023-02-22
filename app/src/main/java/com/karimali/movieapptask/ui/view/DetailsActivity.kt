@@ -51,6 +51,11 @@ class DetailsActivity : AppCompatActivity() {
         intent.extras?.apply {
             moveId = getInt(Constants.Keys.MOVE_ID_KEY,0)
         }
+        intent.data?.apply {
+            Log.i("Data","$this")
+            Log.i("Data","${getQueryParameter("movie_id")}")
+            moveId = getQueryParameter("movie_id")?.toInt()
+        }
     }
 
     private fun setupObserver() {
