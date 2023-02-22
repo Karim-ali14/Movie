@@ -35,16 +35,8 @@ class DetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
         getArgs()
         setUpViews()
+        setupObservable()
         setupObserver()
-        listenToDate()
-    }
-
-    private fun listenToDate() {
-        lifecycleScope.launch{
-            detailsViewModel.moveDetails.collect{
-                Log.i("Data","$it")
-            }
-        }
     }
 
     private fun getArgs() {
@@ -52,14 +44,20 @@ class DetailsActivity : AppCompatActivity() {
             moveId = getInt(Constants.Keys.MOVE_ID_KEY,0)
         }
         intent.data?.apply {
-            Log.i("Data","$this")
-            Log.i("Data","${getQueryParameter("movie_id")}")
-            moveId = getQueryParameter("movie_id")?.toInt()
+            moveId = getQueryParameter(Constants.Keys.MOVE_ID_KEY)?.toInt()
         }
     }
 
-    private fun setupObserver() {
+    private fun setupObservable() {
         detailsViewModel.fetchMoveDetails(moveId!!)
+    }
+
+    private fun setupObserver() {
+        lifecycleScope.launch{
+            detailsViewModel.moveDetails.collect{
+                binding.moveItem = it.data
+            }
+        }
     }
 
     private fun setUpViews() {
