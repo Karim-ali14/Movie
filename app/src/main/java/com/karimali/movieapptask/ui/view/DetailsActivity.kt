@@ -55,6 +55,7 @@ class DetailsActivity : AppCompatActivity() {
     private fun setupObserver() {
         lifecycleScope.launch{
             detailsViewModel.moveDetails.collect{
+                Log.i("MoveItem",it.data?.title.toString())
                 binding.moveItem = it.data
             }
         }

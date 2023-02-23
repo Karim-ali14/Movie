@@ -8,7 +8,7 @@
             type="com.karimali.movieapptask.data.model.MoveModel" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         bind:cardCornerRadius="10dp"
@@ -27,8 +27,7 @@
                 android:scaleType="centerCrop"
                 bind:layout_constraintStart_toStartOf="parent"
                 bind:layout_constraintEnd_toEndOf="parent"
-                bind:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/ic_launcher_background"/>
+                bind:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/player_name"
@@ -43,6 +42,6 @@
                 bind:layout_constraintTop_toBottomOf="@id/player_image" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
 </layout>

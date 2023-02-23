@@ -15,16 +15,27 @@
         android:layout_height="match_parent"
         tools:context=".ui.view.DetailsActivity">
 
-        <ImageView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:id="@+id/icon_movie"
+            android:layout_height="wrap_content"
+            android:background="?attr/background"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            bind:glideImageUrl="@{moveItem.imagePath}"
+            app:title="Details" />
+
+        <ImageView
+            android:id="@+id/icon_movie"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
             android:scaleType="centerCrop"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:glideImageUrl="@{moveItem.imagePath}" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -38,37 +49,39 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="-50dp"
+            android:background="@drawable/move_details_background"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/icon_movie"
-            android:background="@drawable/move_details_background">
+            app:layout_constraintTop_toBottomOf="@id/icon_movie">
 
             <TextView
                 android:id="@+id/movie_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:padding="20dp"
                 android:text="@{moveItem.original_title}"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                android:maxLines="1"
-                android:ellipsize="end"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
+                android:id="@+id/overview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/overview"
-                android:textStyle="italic"
-                android:textSize="17dp"
                 android:lineSpacingExtra="8dp"
                 android:paddingHorizontal="20dp"
-                android:text="@{moveItem.overview}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:paddingTop="20dp"
+                android:textColor="@color/black"
+                android:text="@{moveItem.overview}"
+                android:textSize="17dp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
 
-                app:layout_constraintTop_toBottomOf="@id/movie_title"
-                />
+                app:layout_constraintTop_toBottomOf="@id/movie_title" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,5 +1,6 @@
 package com.karimali.movieapptask.di
 
+import com.karimali.movieapptask.BuildConfig
 import com.karimali.movieapptask.commin.utils.Constants.Links.BASE_URL
 import com.karimali.movieapptask.data.api.ApiService
 import dagger.Module
@@ -21,7 +22,7 @@ object RetrofitModule {
     @Provides
     fun provideOkHttpClient(): OkHttpClient? {
         val logging = HttpLoggingInterceptor()
-        logging.level = HttpLoggingInterceptor.Level.BODY
+        logging.level = if(BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else  HttpLoggingInterceptor.Level.NONE
         return OkHttpClient.Builder()
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
