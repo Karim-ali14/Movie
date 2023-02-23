@@ -3,6 +3,7 @@ package com.karimali.movieapptask.ui.viewmodel
 import androidx.lifecycle.ViewModel
 
 import com.karimali.movieapptask.commin.extension.performNetworkOp
+import com.karimali.movieapptask.commin.utils.Constants
 import com.karimali.movieapptask.commin.utils.Resource
 import com.karimali.movieapptask.data.model.Moves
 import com.karimali.movieapptask.data.repository.moveRepo.MoveRepository
@@ -46,7 +47,7 @@ class MoveViewModel @Inject constructor(
                     _move.emit(Resource.success(it?.results))
                 }else{
                     _hasData.emit(false)
-                    _move.emit(Resource.error(it?.status_message ?: "")) // Todo set static error massage
+                    _move.emit(Resource.error(it?.status_message ?: Constants.Messages.ERROR))
                 }
             },onError = {
                 _isLoading.emit(false)

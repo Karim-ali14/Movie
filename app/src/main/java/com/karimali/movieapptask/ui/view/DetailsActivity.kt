@@ -2,8 +2,6 @@ package com.karimali.movieapptask.ui.view
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -58,7 +56,6 @@ class DetailsActivity : AppCompatActivity() {
     private fun setupObserver() {
         lifecycleScope.launch{
             detailsViewModel.moveDetails.collect{
-                Log.i("MoveItem",it.data?.title.toString())
                 binding.moveItem = it.data
             }
         }

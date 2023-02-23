@@ -16,4 +16,8 @@ object Constants {
         const val GET_MOVES = "3/movie/popular"
         const val GET_MOVE_DETAIlS = "3/movie/{movie_id}"
     }
+
+    object Messages {
+        const val ERROR = "Oops , something went wrong"
+    }
 }

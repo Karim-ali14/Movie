@@ -3,11 +3,10 @@ package com.karimali.movieapptask.ui.viewmodel
 import androidx.lifecycle.ViewModel
 
 import com.karimali.movieapptask.commin.extension.performNetworkOp
+import com.karimali.movieapptask.commin.utils.Constants
 import com.karimali.movieapptask.commin.utils.Resource
 import com.karimali.movieapptask.data.model.MoveDetailsModel
-import com.karimali.movieapptask.data.model.Moves
 import com.karimali.movieapptask.data.repository.detailsRepo.DetailsRepository
-import com.karimali.movieapptask.data.repository.moveRepo.MoveRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -43,7 +42,7 @@ class DetailsViewModel @Inject constructor(
                     _hasData.emit(false)
                     _moveDetails.emit(Resource.success(it))
                 }else{
-                    _moveDetails.emit(Resource.error(it ?: "")) // Todo set static error massage
+                    _moveDetails.emit(Resource.error(it ?: Constants.Messages.ERROR))
                 }
             },onError = {
                 _isLoading.emit(false)
