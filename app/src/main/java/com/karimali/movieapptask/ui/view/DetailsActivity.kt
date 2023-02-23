@@ -2,11 +2,14 @@ package com.karimali.movieapptask.ui.view
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.karimali.movieapptask.R
 import com.karimali.movieapptask.commin.binder.viewBinding
 import com.karimali.movieapptask.commin.extension.showBackButton
 import com.karimali.movieapptask.commin.utils.Constants
@@ -34,7 +37,7 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         getArgs()
-        setUpViews()
+        setUpToolBar()
         setupObservable()
         setupObserver()
     }
@@ -61,7 +64,8 @@ class DetailsActivity : AppCompatActivity() {
         }
     }
 
-    private fun setUpViews() {
+    private fun setUpToolBar() {
         showBackButton()
+        supportActionBar?.title = getString(R.string.details)
     }
 }
