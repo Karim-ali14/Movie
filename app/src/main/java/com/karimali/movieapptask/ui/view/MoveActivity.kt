@@ -5,12 +5,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import com.karimali.movieapptask.commin.binder.viewBinding
 import com.karimali.movieapptask.commin.utils.Constants
 import com.karimali.movieapptask.data.model.MoveModel
 import com.karimali.movieapptask.databinding.ActivityMoveBinding
+import com.karimali.movieapptask.fcm.MyFirebaseMessagingService
 import com.karimali.movieapptask.ui.adapter.MoveAdapter
 import com.karimali.movieapptask.ui.viewmodel.MoveViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,7 +59,6 @@ class MoveActivity : AppCompatActivity() {
                 Log.i("ListenToIsHasData",it.toString())
             }
         }
-
     }
 
     private fun initAdapter() {

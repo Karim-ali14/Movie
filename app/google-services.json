@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "594155440291",
+    "project_id": "moveapp-fdee0",
+    "storage_bucket": "moveapp-fdee0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594155440291:android:98f201b9c28043f1cc1716",
+        "android_client_info": {
+          "package_name": "com.karimali.movieapptask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594155440291-mv17s68ccgfpq83p2ohata1ufkp5gseg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.karimali.movieapptask",
+            "certificate_hash": "c5967b93eaeff29268692328f906fbee3aa6b5a9"
+          }
+        },
+        {
+          "client_id": "594155440291-avjebt36u7hmjb4f3iof1f826u8k01na.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVpJo4KidUxhOXlw1v_L8RNLf6Ka4v0Og"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594155440291-avjebt36u7hmjb4f3iof1f826u8k01na.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
